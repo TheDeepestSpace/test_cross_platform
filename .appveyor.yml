@@ -17,9 +17,9 @@ configuration:
 
 environment:
     matrix:
-        - TOOLCHAIN: msvc14
         - TOOLCHAIN: msvc15
           APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 install:
-    - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+    msvc15:
+        - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"

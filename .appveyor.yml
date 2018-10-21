@@ -16,9 +16,10 @@ configuration:
     - Release
 
 environment:
-    BOOST_ROOT: C:\Libraries\boost_1_64_0 
-    BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.0
-    TOOLCHAIN: msvc15
+    matrix: 
+        - BOOST_ROOT: C:\Libraries\boost_1_64_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc15
 
 install:
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"

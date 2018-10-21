@@ -17,9 +17,30 @@ configuration:
 
 environment:
     matrix: 
+        - BOOST_ROOT: C:\Libraries\boost_1_67_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc15
+        - BOOST_ROOT: C:\Libraries\boost_1_66_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_66_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc15
+        - BOOST_ROOT: C:\Libraries\boost_1_65_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_6750\lib64-msvc-14.0
+          TOOLCHAIN: msvc15
         - BOOST_ROOT: C:\Libraries\boost_1_64_0 
           BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.0
           TOOLCHAIN: msvc15
+        - BOOST_ROOT: C:\Libraries\boost_1_67_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc14
+        - BOOST_ROOT: C:\Libraries\boost_1_66_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_66_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc14
+        - BOOST_ROOT: C:\Libraries\boost_1_65_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_6750\lib64-msvc-14.0
+          TOOLCHAIN: msvc14
+        - BOOST_ROOT: C:\Libraries\boost_1_64_0 
+          BOOST_LIBRARYDIR: C:\Libraries\boost_1_64_0\lib64-msvc-14.0
+          TOOLCHAIN: msvc14
 
 install:
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"

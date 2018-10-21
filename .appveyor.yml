@@ -19,6 +19,8 @@ environment:
     matrix:
         - TOOLCHAIN: msvc15
         - TOOLCHAIN: msvc14
+        - TOOLCHAIN: msvc12
+        - TOOLCHAIN: msvc10
 
 install:
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"

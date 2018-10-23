@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef __GNUC__
+#define __FUNCSIG__ __PRETTY_FUNCTION__
+#endif
+
 #include <iostream>
 
 struct MyClass {

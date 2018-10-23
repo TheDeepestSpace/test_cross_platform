@@ -9,20 +9,9 @@ env:
     - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
     - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
-matrix:
-    include:
-        - env: TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
-          addons:
-              apt:
-                  update: true
-                  sources:
-                      - sourceline: 'ppa:mhier/libboost-latest'
-                      - ubuntu-toolchain-r-test
-                  packages:
-                      - boost1.67
-
-install:
-    - source ci/travis/install-$TRAVIS_OS_NAME.sh
+before_script:
+    - sudo apt-get update -qq
+    - sudo apt-get install libboost-all-dev
 
 script:
     - mkdir build

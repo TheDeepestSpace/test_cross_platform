@@ -14,7 +14,14 @@ before_script:
     - sudo apt-get install libboost-all-dev
 
 script:
-    - mkdir build
-    - cd build
-    - cmake ..
     - make
+
+deploy:
+    provider: releases
+    api-key:
+        secure:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy+5qMlhyXJUF7ngjCoIFqNoJrOdsPW0zYExtXW4pbCcALZsGX82o5pNWiuId8pMsKs/wmi0e6XuY5TCBKsa6YuEc/KYnLWc+rg1Og1xZPMyaqKMJOzID+74Md0XbNYW9lVMKxsQnEHp4Mni9Go8WQHhVLBvF0hyeGq/iZABPy3CKnxKN4eYkgCrZWXsz8RPW2p4RQ5Cbv6Kid1iuczpl0llIjirejBPeKLV+/E+Sj7WszLYvxP0Z6oG6AcZFVo078/PdvCIwyTBg4cUkkNCUEf76YujnOTUuSDzWxThFIEIVg7PXWL2rCEeJzI35zZwmqbPv4V6ptKVz2ycyomBzeT8EbPZYSMDvGB3LOrLfBHNKVc8U5HiK5FuO2QdChijdF6M1x2yP725LJfZWN/0Udzxk9koTp1gezSRPLFm1aRC3KOKuwtSuMwZM1q8ERO2JaV0bP29Ps4tDC0PiPNSI9alROxelIxntQKplcv3mSbU0T07826ytJ8GGAxW8r4E33eD/+GLF+5TdIEeowW3dIScKH8q0D3v8yHq0CGMvoeHJfoSER4UfXqJVSguknCZW9QSHo/gJ38Bnxl/dsuLQ30yX6GrQxtI3SaFHA518NgYjQAk0RtXBuhVjV1uXEr5xI8ifbpuxutEX6zNb+I62TSvLTLEw4WGo/XWDdLQ1hdw==
+    fil_glob: true
+    file: out/*
+    on:
+        tags: true

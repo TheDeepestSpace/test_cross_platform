@@ -1,27 +1,20 @@
-dist: trusty
 sudo: required
-
-language: cpp
 os: linux
+dist: trusty
+language: cpp
 compiler: gcc
-
 env:
     - TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
     - TARGET_CPU=x86 BUILD_CONFIGURATION=Release
-
 before_script:
     - sudo apt-get update -qq
     - sudo apt-get install libboost-all-dev
-
 script:
     - make
-
 deploy:
     provider: releases
-    api-key:
-        secure:
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCy+5qMlhyXJUF7ngjCoIFqNoJrOdsPW0zYExtXW4pbCcALZsGX82o5pNWiuId8pMsKs/wmi0e6XuY5TCBKsa6YuEc/KYnLWc+rg1Og1xZPMyaqKMJOzID+74Md0XbNYW9lVMKxsQnEHp4Mni9Go8WQHhVLBvF0hyeGq/iZABPy3CKnxKN4eYkgCrZWXsz8RPW2p4RQ5Cbv6Kid1iuczpl0llIjirejBPeKLV+/E+Sj7WszLYvxP0Z6oG6AcZFVo078/PdvCIwyTBg4cUkkNCUEf76YujnOTUuSDzWxThFIEIVg7PXWL2rCEeJzI35zZwmqbPv4V6ptKVz2ycyomBzeT8EbPZYSMDvGB3LOrLfBHNKVc8U5HiK5FuO2QdChijdF6M1x2yP725LJfZWN/0Udzxk9koTp1gezSRPLFm1aRC3KOKuwtSuMwZM1q8ERO2JaV0bP29Ps4tDC0PiPNSI9alROxelIxntQKplcv3mSbU0T07826ytJ8GGAxW8r4E33eD/+GLF+5TdIEeowW3dIScKH8q0D3v8yHq0CGMvoeHJfoSER4UfXqJVSguknCZW9QSHo/gJ38Bnxl/dsuLQ30yX6GrQxtI3SaFHA518NgYjQAk0RtXBuhVjV1uXEr5xI8ifbpuxutEX6zNb+I62TSvLTLEw4WGo/XWDdLQ1hdw==
-    fil_glob: true
+    api_key:
+      secure: z5dzyCE9psEzvMluYn84q34sLa32FNoe2HkTkn4kfXDp+ejfYyq8UGjIQlDLW2STRKYKJFdejkCejwEB6+LLsBa2gcpNef/ga9PCnXoH4pVQpKIGdqrl5oKLfLd0v8LX7vKefSCM0AaEiOKc0XF6ailmMmJyz1yVLsxhe7JTnWrEjg+ol1PmnLfreahKgDcXmvPhS8DbvQNkTNficM/HCjbwTgfc7Gc+KhnlsozjcGW9YCLF+OhuuHQ/eaNm4ooayUj1aFIjZGoez/GVGHIP+pEiFFxi+IQow21N/yAvh38DQXnVvJKR3Sor8qtcXS8vkPio5fVx0LKb9CCCH//0mCqtOQkKlWlMVm9dI90Uw9m6R/dFQzo6WZPLmKIV5CZZN6OXZcuAqSU4LtFPdOKcSgM71ZHe3OOtOIF/OGH8B1UsjfRpyDsIyaIqL/vX91WePW3lL2fVLLExfsqF3bd757hKcyK6KdNdrv7PVT6qFsR/toDOCuIPbM1q42bIJ4ZjE+5z/9UG3WQWVjleN6wSSkAXvlHMt/SeBtH4rt0peEeSOzExr//hQbPq++Wfte2Sm6HuNLKIdV1rkoU/0pLf/kXwfLqxAf0YcIf7xxCBzTr3YT2S5XYA3qPSU7OMEjUtBl6nHnYSpR3RpFPfQysJ6i07toubq+Z28eDnURlqLdI=
     file: out/*
     on:
-        tags: true
+        repo: TheDeepestSpace/test_cross_platform
